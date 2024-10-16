@@ -70,6 +70,7 @@ exports.login = async (req, res) => {
       firstName: user.firstName,
       lastName: user.lastName,
       mobile: user.mobile,
+      photo: user.photo,
     };
     res.status(200).json({
       status: "Success",
@@ -108,7 +109,7 @@ exports.updateProfile = async (req, res) => {
         message: "User not found!",
       });
     }
-    res.status(201).json({
+    res.status(200).json({
       status: "Success",
       message: "Successfully updated",
       data: updateUser,

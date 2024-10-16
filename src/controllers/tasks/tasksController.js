@@ -240,9 +240,9 @@ exports.listTaskByStatus = async (req, res) => {
           description: 1,
           status: 1,
           dueDate: 1,
-          createDate: {
+          createdDate: {
             $dateToString: {
-              date: "$createDate",
+              date: { $ifNull: ["$createDate", new Date()] }, // Default to the current date if createDate is null
               format: "%d-%m-%Y",
             },
           },
@@ -270,6 +270,7 @@ exports.listTaskByStatus = async (req, res) => {
     });
   }
 };
+
 exports.taskStatusCount = async (req, res) => {
   let email = req.user.email;
   try {

@@ -37,7 +37,7 @@ UserSchemaModel.methods.generateJWT = function () {
       email: this.email,
     },
     process.env.SECRET_KEY,
-    { expiresIn: "1h" }
+    { expiresIn: "12h" }
   );
   return token;
 };

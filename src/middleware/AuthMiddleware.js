@@ -10,7 +10,7 @@ module.exports = function (req, res, next) {
 
   try {
     const decode = jwt.verify(token, process.env.SECRET_KEY, {
-      expiresIn: "1h",
+      expiresIn: "12h",
     });
     req.user = decode;
     next();

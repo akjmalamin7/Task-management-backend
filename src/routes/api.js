@@ -30,7 +30,7 @@ router.post("/tasks/create", authMiddleware, createTask);
 router.get("/tasks/list", authMiddleware, taskList);
 router.get("/tasks/view/:id", authMiddleware, viewTask);
 router.patch("/tasks/:id", authMiddleware, updateTask);
-router.delete("/tasks/:id", authMiddleware, deleteTask);
+router.delete("/task/:id", authMiddleware, deleteTask);
 
 router.get("/tasks/list/:status", authMiddleware, listTaskByStatus);
 router.put("/tasks/:id/status", authMiddleware, updateTaskByStatus);
